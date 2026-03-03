@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/PietroHansel/metal-gear-saga#readme",
   "devDependencies": {
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.0.2",
     "globals": "^17.4.0",
