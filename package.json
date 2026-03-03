@@ -1,0 +1,37 @@
+{
+  "name": "metal-gear-saga",
+  "version": "1.0.0",
+  "description": "Projeto de desenvolvimento web focado na evolução para Full Stack, apresentando uma linha do tempo completa da saga Metal Gear, criada por Hideo Kojima. A aplicação organiza eventos e personagens em uma interface estruturada, servindo como laboratório prático para consolidação de habilidades em desenvolvimento e arquitetura web.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write .",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PietroHansel/metal-gear-saga.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PietroHansel/metal-gear-saga/issues"
+  },
+  "homepage": "https://github.com/PietroHansel/metal-gear-saga#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.2",
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.1",
+    "prettier": "^3.8.1"
+  },
+  "lint-staged": {
+    "*.{js,html,css,json,md}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
