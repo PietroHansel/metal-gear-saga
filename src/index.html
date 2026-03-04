@@ -4,110 +4,195 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Metal Gear Saga</title>
+    <link rel="stylesheet" href="src/styles/css/global.css" />
     <link rel="stylesheet" href="index.css" />
+    <meta
+      name="description"
+      content="Linha do tempo completa da saga Metal Gear, personagens, organizações e análise cronológica detalhada."
+    />
   </head>
 
   <body>
     <!-- TOP BAR -->
-    <div class="top-bar">
+    <header class="top-bar">
       <div class="marquee">
         <div class="track">
-          <span> ALERTA: Nova atualização disponível — Metal Gear Saga Timeline completa — </span>
-          <span> ALERTA: Nova atualização disponível — Metal Gear Saga Timeline completa — </span>
+          <span>
+            ALERTA: Nova atualização disponível — Metal Gear Saga Timeline completa — ALERTA: Nova
+            atualização disponível — Metal Gear Saga Timeline completa — ALERTA: Nova atualização
+            disponível — Metal Gear Saga Timeline completa —
+          </span>
+          <span>
+            ALERTA: Nova atualização disponível — Metal Gear Saga Timeline completa — ALERTA: Nova
+            atualização disponível — Metal Gear Saga Timeline completa — ALERTA: Nova atualização
+            disponível — Metal Gear Saga Timeline completa —
+          </span>
         </div>
       </div>
-    </div>
+    </header>
+
+    <!-- NAV -->
+    <nav>
+      <div class="logo">
+        <a href="#">
+          <img src="assets/images/icon/snake-icon.png" class="logo-img" alt="Logo" />
+          <span class="logo-text">METAL GEAR SAGA</span>
+        </a>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#linha-do-tempo">Linha do Tempo</a></li>
+        <li><a href="#personagens">Personagens</a></li>
+        <li><a href="#organizacoes">Organizações</a></li>
+        <li><a href="#metal-gears">Metal Gears</a></li>
+      </ul>
+
+      <form class="pesquisa" action="#" method="get">
+        <input type="search" name="q" class="search-box-input" placeholder="Pesquisar..." />
+        <button class="search-box-button" type="submit">
+          <img src="assets/images/icon/idroid-icon.png" alt="Pesquisar" class="search-icon" />
+        </button>
+      </form>
+
+      <a href="#sobre" class="btn">Sobre o Projeto</a>
+    </nav>
+
+    <!-- HERO -->
+    <main>
+      <section class="main-content" id="inicio">
+        <div class="hero-banner">
+          <div class="hero-slider" role="region" aria-label="Destaque">
+            <img
+              src="assets/images/header/snake-with-gun.jpg"
+              alt="imagem"
+              class="hero-slide active"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/header/old-snake.png"
+              alt="imagem"
+              class="hero-slide"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/header/raiden-and-snake.png"
+              alt="imagem"
+              class="hero-slide"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="hero-banner-overlay"></div>
+          <div class="hud-grid"></div>
+
+          <div class="hero-banner-content">
+            <h1>Metal Gear Saga</h1>
+            <p>Uma análise cronológica completa da franquia.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY-->
+      <section class="gallery-section">
+        <div class="gallery-header">
+          <h2>Ver mais ➝</h2>
+          <br />
+          <p class="gallery-description">
+            Explore personagens, momentos marcantes e eventos importantes da saga.
+          </p>
+          <br />
+        </div>
+
+        <div class="gallery-scroll">
+          <div class="gallery-card">
+            <img src="assets/images/header/snake-with-gun.jpg" alt="#" loading="lazy" />
+            <div class="gallery-text">
+              <h3>Operation Snake Eater</h3>
+              <p>Missão que marcou o nascimento de Big Boss e redefiniu a história da franquia.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="assets/images/header/snake-with-gun.jpg" alt="#" loading="lazy" />
+            <div class="gallery-text">
+              <h3>Les Enfants Terribles</h3>
+              <p>Projeto secreto que deu origem aos clones de Big Boss.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="assets/images/header/snake-with-gun.jpg" alt="#" loading="lazy" />
+            <div class="gallery-text">
+              <h3>Shadow Moses</h3>
+              <p>A missão que colocou Solid Snake contra a FOXHOUND.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="assets/images/header/snake-with-gun.jpg" alt="#" loading="lazy" />
+            <div class="gallery-text">
+              <h3>Outer Heaven</h3>
+              <p>A fortaleza militar que mudou o rumo da guerra moderna.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-col highlight-links">
+            <ul>
+              <li><a href="#">AUTORES</a></li>
+              <li><a href="#">MAPA DO SITE</a></li>
+              <li><a href="#">JUNTE-SE A NÓS</a></li>
+              <li><a href="#">PROJETO INDEPENDENTE</a></li>
+            </ul>
+          </div>
+
+          <nav class="footer-col">
+            <h3>AJUDA</h3>
+            <ul>
+              <li><a href="#">Fale Conosco</a></li>
+              <li><a href="#">Relatar Problema</a></li>
+              <li><a href="#">Dúvidas Frequentes</a></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-col">
+            <h3>PROJETO</h3>
+            <ul>
+              <li><a href="#">Propósito</a></li>
+              <li><a href="#">Análise Narrativa</a></li>
+              <li><a href="#">Preservação Histórica</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-col social-col">
+            <div class="social-icons">
+              <a href="#" class="social-icon">FB</a>
+              <a href="#" class="social-icon">IG</a>
+              <a href="#" class="social-icon">YT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-legal">
+          <div class="legal-brand">
+            <span class="region-label">Brasil</span>
+            <p class="copyright-text">
+              © 2026 Pietro H. & Equipe X. Projeto não afiliado à Konami.
+            </p>
+          </div>
+          <div class="legal-policy">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
-
-<!-- NAV -->
-<nav>
-  <div class="logo">
-    <a href="#">
-      <img src="assets/images/icon/snake-icon.png" class="logo-img" alt="Logo" />
-      <span class="logo-text">METAL GEAR SAGA</span>
-    </a>
-  </div>
-
-  <ul class="nav-links">
-    <li><a href="#inicio">Início</a></li>
-    <li><a href="#linha-do-tempo">Linha do Tempo</a></li>
-    <li><a href="#personagens">Personagens</a></li>
-    <li><a href="#organizacoes">Organizações</a></li>
-    <li><a href="#metal-gears">Metal Gears</a></li>
-  </ul>
-
-  <form class="pesquisa">
-    <input type="search" class="search-box-input" placeholder="Pesquisar..." />
-    <button class="search-box-button" type="submit">
-      <img src="assets/images/icon/idroid-icon.png" alt="Pesquisar" class="search-icon" />
-    </button>
-  </form>
-
-  <button class="btn">Sobre o Projeto</button>
-</nav>
-
-<!-- HERO/BANNER -->
-<section class="main-content" id="inicio">
-  <div class="hero-banner">
-    <div class="hero-slider">
-      <img src="assets/images/header/old-snake.png" class="hero-slide active" />
-      <img src="assets/images/header/snake-with-gun.jpg" class="hero-slide" />
-      <img src="assets/images/header/big-boss.jpg" class="hero-slide" />
-    </div>
-
-    <div class="hero-banner-overlay"></div>
-    <div class="hud-grid"></div>
-
-    <div class="hero-banner-content">
-      <h1>Metal Gear Saga</h1>
-      <p>Uma análise cronológica completa da franquia.</p>
-    </div>
-  </div>
-</section>
-
-<!-- GALERIA HORIZONTAL COM TEXTO -->
-<section class="gallery-section">
-  <div class="gallery-header">
-    <h2>Ver mais ➝</h2>
-    <p class="gallery-description">
-      Explore personagens, momentos marcantes e eventos importantes da saga.
-    </p>
-  </div>
-
-  <div class="gallery-scroll">
-    <div class="gallery-card">
-      <img src="assets/images/header/snake-with-gun.jpg" alt="" />
-      <div class="gallery-text">
-        <h3>Operation Snake Eater</h3>
-        <p>Missão que marcou o nascimento de Big Boss e redefiniu a história da franquia.</p>
-      </div>
-    </div>
-
-    <div class="gallery-card">
-      <img src="assets/images/header/big-boss.jpg" alt="" />
-      <div class="gallery-text">
-        <h3>Les Enfants Terribles</h3>
-        <p>Projeto secreto que deu origem aos clones de Big Boss.</p>
-      </div>
-    </div>
-
-    <div class="gallery-card">
-      <img src="assets/images/header/old-snake.png" alt="" />
-      <div class="gallery-text">
-        <h3>Shadow Moses</h3>
-        <p>A missão que colocou Solid Snake contra a FOXHOUND.</p>
-      </div>
-    </div>
-
-    <div class="gallery-card">
-      <img src="assets/images/header/snake-with-gun.jpg" alt="" />
-      <div class="gallery-text">
-        <h3>Outer Heaven</h3>
-        <p>A fortaleza militar que mudou o rumo da guerra moderna.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SEÇÃO INSTITUCIONAL / CONTATO -->

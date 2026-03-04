@@ -1,0 +1,75 @@
+/* ================================================== */
+/* 1. RESET & BASE                                    */
+/* ================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores e Identidade */
+  --primary-gray: #3a3f44;
+  --dark-bg: #0b0d10;
+  --footer-bg: #111111;
+  --accent-gray: #bfbfc9;
+  --gray-glow: rgba(191, 191, 201, 0.3);
+
+  /* Texto */
+  --text-main: #ffffff;
+  --text-muted: #7e7e7e;
+  --link-hover: #ffffff;
+
+  /* Bordas e Divisores */
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --divider-color: #222222;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ================================================== */
+/* 2. ELEMENTOS GLOBAIS                               */
+/* ================================================== */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gray);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gray);
+}
