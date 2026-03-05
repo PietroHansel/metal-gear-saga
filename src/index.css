@@ -18,26 +18,21 @@
    ========================================================= */
 
 :root {
-  /* CORES PRINCIPAIS */
-  --primary-color: #e11d48; /* Vermelho alerta */
-  --accent-color: #facc15; /* Amarelo warning */
+  --primary-color: #e11d48;
+  --accent-color: #facc15;
 
-  /* BACKGROUNDS */
   --bg-dark: #0a0a0a;
   --bg-card: #161616;
   --nav-bg: rgba(10, 10, 10, 0.95);
 
-  /* TEXTO */
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
 
-  /* TRANSIÇÕES */
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* =========================================================
    2. RESET GLOBAL
-   Remove inconsistências entre navegadores
    ========================================================= */
 
 * {
@@ -58,6 +53,7 @@ body {
     'Segoe UI',
     Roboto,
     sans-serif;
+
   background-color: var(--bg-dark);
   color: var(--text-main);
   line-height: 1.6;
@@ -93,7 +89,7 @@ body {
 }
 
 /* =========================================================
-   5. TOP BAR (ALERT MARQUEE)
+   5. TOP BAR
    ========================================================= */
 
 .top-bar {
@@ -121,7 +117,6 @@ body {
   padding-right: 4rem;
 }
 
-/* pausa quando mouse passa por cima */
 .top-bar:hover .marquee-track {
   animation-play-state: paused;
 }
@@ -198,7 +193,7 @@ body {
   text-shadow: 0 0 8px rgba(225, 29, 72, 0.4);
 }
 
-/* AÇÕES DA NAVBAR */
+/* NAV ACTIONS */
 
 .nav-actions {
   display: flex;
@@ -265,7 +260,6 @@ body {
 
 .hero {
   position: relative;
-
   height: 80vh;
 
   display: flex;
@@ -295,13 +289,14 @@ body {
   opacity: 1;
 }
 
+/* IMAGENS DO HERO */
+
 .slide img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-
-  animation: subtleZoom 20s infinite alternate;
+  width: auto;
+  height: 80vh;
+  display: block;
+  margin: 0 auto;
+  animation: subtleZoom 10s infinite alternate;
 }
 
 /* OVERLAY */
@@ -320,7 +315,6 @@ body {
 .hero-text {
   position: relative;
   z-index: 2;
-
   text-align: center;
 }
 
@@ -330,12 +324,21 @@ body {
 
   letter-spacing: 10px;
   margin-bottom: 0.5rem;
+
   font-family: 'MGS2', sans-serif;
+
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
+.tactical-text {
+  letter-spacing: 16px;
+  font-size: 13px;
+  color: #cfcfcf;
+  text-transform: uppercase;
+}
+
 /* =========================================================
-   8. GALLERY (PERSONAGENS)
+   8. GALLERY
    ========================================================= */
 
 .gallery-section {
@@ -348,8 +351,6 @@ body {
   border-left: 4px solid var(--primary-color);
   padding-left: 1.5rem;
 }
-
-/* SCROLL HORIZONTAL */
 
 .horizontal-scroll {
   display: flex;
@@ -395,8 +396,6 @@ body {
   aspect-ratio: 1/1;
   object-fit: cover;
 }
-
-/* CONTEÚDO DO CARD */
 
 .card-content {
   padding: 1.5rem;
