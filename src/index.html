@@ -3,196 +3,260 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Metal Gear Saga</title>
-    <link rel="stylesheet" href="src/styles/css/global.css" />
-    <link rel="stylesheet" href="index.css" />
+    <title>Metal Gear Saga | Arquivo Chronológico</title>
     <meta
       name="description"
-      content="Linha do tempo completa da saga Metal Gear, personagens, organizações e análise cronológica detalhada."
+      content="Análise detalhada da linha do tempo e personagens da saga Metal Gear."
     />
+    <!-- Arquivos CSS separados. Mantive o link original (index.css). -->
+    <link rel="stylesheet" href="index.css" />
   </head>
 
   <body>
-    <!-- TOP BAR -->
-    <header class="top-bar">
+    <!-- Skip link para acessibilidade: permite que usuários de teclado pulem para o conteúdo principal -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Top bar: avisos do sistema. Comentários explicam comportamentos esperados (ex: animação tipo "marquee"). -->
+    <div class="top-bar" role="complementary" aria-label="Alertas do sistema">
+      <!--
+      .marquee
+      - Conteúdo rolante. Em vez da tag <marquee> (obsoleta), usa-se animação CSS no container .marquee-track.
+      - Repetir mensagens para preencher a pista; use JS para clonar quando variável.
+    -->
       <div class="marquee">
-        <div class="track">
-          <span>
-            ALERTA: Nova atualização disponível — Metal Gear Saga Timeline completa — ALERTA: Nova
-            atualização disponível — Metal Gear Saga Timeline completa — ALERTA: Nova atualização
-            disponível — Metal Gear Saga Timeline completa —
-          </span>
-          <span>
-            ALERTA: Nova atualização disponível — Metal Gear Saga Timeline completa — ALERTA: Nova
-            atualização disponível — Metal Gear Saga Timeline completa — ALERTA: Nova atualização
-            disponível — Metal Gear Saga Timeline completa —
-          </span>
+        <div class="marquee-track">
+          <span>ALERTA: Nova atualização disponível — Metal Gear Saga Timeline completa — </span>
+          <span>ALERTA: Nova atualização disponível — Metal Gear Saga Timeline completa — </span>
+          <span>ALERTA: Nova atualização disponível — Metal Gear Saga Timeline completa — </span>
+          <span>ALERTA: Nova atualização disponível — Metal Gear Saga Timeline completa — </span>
         </div>
       </div>
+    </div>
+
+    <!-- Cabeçalho principal com navegação -->
+    <header class="main-header">
+      <nav class="navbar" aria-label="Navegação Principal" role="navigation">
+        <!-- Logo + título do site. Link para home. -->
+        <div class="logo-container">
+          <a href="index.html" class="logo-link">
+            <!-- Imagem do ícone do site. width/height preservam layout; alt descritivo para acessibilidade. -->
+            <img
+              src="assets/images/icons/snake-icon.png"
+              alt="Logo Metal Gear Saga"
+              class="site-logo"
+              width="40"
+              height="40"
+            />
+            <span class="site-title">METAL GEAR <strong>SAGA</strong></span>
+          </a>
+        </div>
+
+        <!-- Links de navegação principais. IDs/anchors devem existir nas seções correspondentes. -->
+        <ul class="nav-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#personagens">Personagens</a></li>
+          <li><a href="#organizacoes">Organizações</a></li>
+          <li><a href="#metal-gears">Metal Gears</a></li>
+        </ul>
+
+        <!-- Ações da navbar (busca e botão do projeto). Form acessível com role=search e label. -->
+        <div class="nav-actions">
+          <form class="search-bar" role="search" aria-label="Pesquisar no site">
+            <!-- input type=search para comportamento nativo; placeholder e aria-label mantidos. -->
+            <input
+              type="search"
+              name="q"
+              placeholder="Pesquisar..."
+              aria-label="Pesquisar conteúdo"
+            />
+            <button type="submit" aria-label="Buscar">
+              <!-- Ícone SVG para buscar. Sem texto visual, então aria-label no botão é necessário. -->
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </button>
+          </form>
+          <a href="#projeto" class="btn-project">Projeto</a>
+        </div>
+      </nav>
     </header>
 
-    <!-- NAV -->
-    <nav>
-      <div class="logo">
-        <a href="#">
-          <img src="assets/images/icon/snake-icon.png" class="logo-img" alt="Logo" />
-          <span class="logo-text">METAL GEAR SAGA</span>
-        </a>
-      </div>
-
-      <ul class="nav-links">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#linha-do-tempo">Linha do Tempo</a></li>
-        <li><a href="#personagens">Personagens</a></li>
-        <li><a href="#organizacoes">Organizações</a></li>
-        <li><a href="#metal-gears">Metal Gears</a></li>
-      </ul>
-
-      <form class="pesquisa" action="#" method="get">
-        <input type="search" name="q" class="search-box-input" placeholder="Pesquisar..." />
-        <button class="search-box-button" type="submit">
-          <img src="assets/images/icon/idroid-icon.png" alt="Pesquisar" class="search-icon" />
-        </button>
-      </form>
-
-      <a href="#sobre" class="btn">Sobre o Projeto</a>
-    </nav>
-
-    <!-- HERO -->
-    <main>
-      <section class="main-content" id="inicio">
-        <div class="hero-banner">
-          <div class="hero-slider" role="region" aria-label="Destaque">
+    <!-- Conteúdo principal do documento -->
+    <main id="main-content">
+      <!-- HERO: bloco de destaque. Use <picture> para imagens responsivas ou versões WebP/AVIF. -->
+      <section class="hero" id="inicio" aria-label="Destaque principal">
+        <!-- Slider simples: estrutura HTML preparada para ser controlada por script.js -->
+        <div class="hero-slider" aria-live="polite">
+          <!-- Cada .slide representa um frame do carrossel. "active" indica o slide visível. -->
+          <div class="slide active">
+            <!-- Recomendo trocar para <picture> com fontes otimizadas em produção. -->
             <img
-              src="assets/images/header/snake-with-gun.jpg"
-              alt="imagem"
-              class="hero-slide active"
-              loading="lazy"
-            />
-            <img
-              src="assets/images/header/old-snake.png"
-              alt="imagem"
-              class="hero-slide"
-              loading="lazy"
-            />
-            <img
-              src="assets/images/header/raiden-and-snake.png"
-              alt="imagem"
-              class="hero-slide"
-              loading="lazy"
+              src="assets/images/hero/solid-snake-rage.png"
+              alt="Solid Snake gritando"
+              width="1920"
+              height="1080"
             />
           </div>
 
-          <div class="hero-banner-overlay"></div>
-          <div class="hud-grid"></div>
-
-          <div class="hero-banner-content">
-            <h1>Metal Gear Saga</h1>
-            <p>Uma análise cronológica completa da franquia.</p>
+          <div class="slide">
+            <img
+              src="assets/images/hero/snake-with-fox.png"
+              alt="Snake e uma raposa"
+              width="1920"
+              height="1080"
+            />
           </div>
+
+          <div class="slide">
+            <!-- Imagem externa: mantenha cautela com hotlink. Preferível baixar e servir localmente. -->
+            <img
+              src="assets/images/hero/raiden-sword.png"
+              alt="Raiden"
+              width="1920"
+              height="1080"
+            />
+          </div>
+        </div>
+
+        <!-- Camada escura sobre a imagem para melhorar legibilidade do texto -->
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <!-- Texto principal do hero. Use heading único h1 na página. -->
+        <div class="hero-text">
+          <h1>Metal Gear Saga</h1>
+          <p>Uma análise cronológica completa da franquia</p>
         </div>
       </section>
 
-      <!-- GALLERY-->
-      <section class="gallery-section">
-        <div class="gallery-header">
-          <h2>Ver mais ➝</h2>
-          <br />
-          <p class="gallery-description">
-            Explore personagens, momentos marcantes e eventos importantes da saga.
-          </p>
-          <br />
-        </div>
-
-        <div class="gallery-scroll">
-          <div class="gallery-card">
-            <img src="assets/images/header/snake-with-gun.jpg" alt="#" loading="lazy" />
-            <div class="gallery-text">
-              <h3>Operation Snake Eater</h3>
-              <p>Missão que marcou o nascimento de Big Boss e redefiniu a história da franquia.</p>
-            </div>
+      <!-- GALLERY: seção de personagens com rolagem horizontal acessível -->
+      <section class="gallery-section" id="personagens" aria-labelledby="personagens-title">
+        <div class="container">
+          <div class="gallery-header">
+            <h2 id="personagens-title">Arquivos de Personagens</h2>
+            <p>Dados biográficos extraídos dos arquivos da FOXHOUND.</p>
           </div>
 
-          <div class="gallery-card">
-            <img src="assets/images/header/snake-with-gun.jpg" alt="#" loading="lazy" />
-            <div class="gallery-text">
-              <h3>Les Enfants Terribles</h3>
-              <p>Projeto secreto que deu origem aos clones de Big Boss.</p>
-            </div>
-          </div>
+          <!--
+          .horizontal-scroll
+          - Contêiner rolável horizontalmente. tabindex="0" torna acessível via teclado.
+          - Considere adicionar controles (prev/next) e atributos ARIA para um carrossel mais robusto.
+        -->
+          <div class="horizontal-scroll" tabindex="0">
+            <!-- CARD: padrão reutilizável para cada personagem -->
+            <article class="card">
+              <img
+                src="assets/images/gallery/big-boss.png"
+                alt="Big Boss"
+                loading="lazy"
+                width="300"
+                height="300"
+              />
+              <div class="card-content">
+                <h3>Big Boss</h3>
+                <p>O soldado lendário e fundador da Outer Heaven.</p>
+              </div>
+            </article>
 
-          <div class="gallery-card">
-            <img src="assets/images/header/snake-with-gun.jpg" alt="#" loading="lazy" />
-            <div class="gallery-text">
-              <h3>Shadow Moses</h3>
-              <p>A missão que colocou Solid Snake contra a FOXHOUND.</p>
-            </div>
-          </div>
+            <article class="card">
+              <img
+                src="assets/images/gallery/the-boss.png"
+                alt="The Boss"
+                loading="lazy"
+                width="300"
+                height="300"
+              />
+              <div class="card-content">
+                <h3>The Boss</h3>
+                <p>A mãe das forças especiais e mentora de Naked Snake.</p>
+              </div>
+            </article>
 
-          <div class="gallery-card">
-            <img src="assets/images/header/snake-with-gun.jpg" alt="#" loading="lazy" />
-            <div class="gallery-text">
-              <h3>Outer Heaven</h3>
-              <p>A fortaleza militar que mudou o rumo da guerra moderna.</p>
-            </div>
+            <article class="card">
+              <img
+                src="assets/images/gallery/solid-snake.png"
+                alt="Solid Snake"
+                loading="lazy"
+                width="300"
+                height="300"
+              />
+              <div class="card-content">
+                <h3>Solid Snake</h3>
+                <p>O homem que faz o impossível tornar-se realidade.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="assets/images/gallery/revolver-ocelot.png"
+                alt="Revolver Ocelot"
+                loading="lazy"
+                width="300"
+                height="301"
+              />
+              <div class="card-content">
+                <h3>Revolver Ocelot</h3>
+                <p>Mestre do interrogatório e agente duplo perpétuo.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="assets/images/gallery/venon-snake.png"
+                alt="Venom Snake"
+                loading="lazy"
+                width="300"
+                height="300"
+              />
+              <div class="card-content">
+                <h3>Venom Snake</h3>
+                <p>O fantasma que carregou o legado de um herói.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-      <div class="footer-container">
-        <div class="footer-grid">
-          <div class="footer-col highlight-links">
-            <ul>
-              <li><a href="#">AUTORES</a></li>
-              <li><a href="#">MAPA DO SITE</a></li>
-              <li><a href="#">JUNTE-SE A NÓS</a></li>
-              <li><a href="#">PROJETO INDEPENDENTE</a></li>
-            </ul>
-          </div>
-
-          <nav class="footer-col">
-            <h3>AJUDA</h3>
-            <ul>
-              <li><a href="#">Fale Conosco</a></li>
-              <li><a href="#">Relatar Problema</a></li>
-              <li><a href="#">Dúvidas Frequentes</a></li>
-            </ul>
-          </nav>
-
-          <nav class="footer-col">
-            <h3>PROJETO</h3>
-            <ul>
-              <li><a href="#">Propósito</a></li>
-              <li><a href="#">Análise Narrativa</a></li>
-              <li><a href="#">Preservação Histórica</a></li>
-            </ul>
-          </nav>
-
-          <div class="footer-col social-col">
-            <div class="social-icons">
-              <a href="#" class="social-icon">FB</a>
-              <a href="#" class="social-icon">IG</a>
-              <a href="#" class="social-icon">YT</a>
-            </div>
-          </div>
+    <!-- Rodapé com informações adicionais -->
+    <footer class="main-footer" role="contentinfo">
+      <div class="container footer-grid">
+        <div class="footer-section">
+          <h3>Ajuda</h3>
+          <ul>
+            <li><a href="#">Fale Conosco</a></li>
+            <li><a href="#">Relatar Problema</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
         </div>
-
-        <div class="footer-legal">
-          <div class="legal-brand">
-            <span class="region-label">Brasil</span>
-            <p class="copyright-text">
-              © 2026 Pietro H. & Equipe X. Projeto não afiliado à Konami.
-            </p>
-          </div>
-          <div class="legal-policy">
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Termos de Uso</a>
-          </div>
+        <div class="footer-section">
+          <h3>Sobre o Projeto</h3>
+          <ul>
+            <li><a href="#">Propósito</a></li>
+            <li><a href="#">Sobre o Projeto</a></li>
+            <li><a href="#">Informações Gerais</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Metal Gear Saga. Todos os direitos reservados.</p>
+          <p class="disclaimer">
+            Este projeto é independente e não possui afiliação com a Konami Digital Entertainment.
+          </p>
         </div>
       </div>
     </footer>
+
+    <!-- Script principal: manter comportamento do carrossel, acessibilidade extra e interações. -->
+    <script src="index.js"></script>
   </body>
 </html>
