@@ -89,33 +89,86 @@ body {
 }
 
 /* =========================================================
-   5. TOP BAR
+   TOP BAR - HUD ALERT SYSTEM
    ========================================================= */
 
 .top-bar {
-  background-color: #1a1b1b;
-  color: #ffffff;
-  height: 40px;
+  position: relative;
+
+  background: #0f1111;
+  color: #e4e4e4;
+
+  height: 42px;
 
   display: flex;
   align-items: center;
 
   overflow: hidden;
 
-  font-weight: 700;
   font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 2px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+/* SCANLINE EFFECT */
+
+.top-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+
+  pointer-events: none;
+}
+
+/* MARQUEE CONTAINER */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* SCROLL TRACK */
 
 .marquee-track {
   display: flex;
+  gap: 3rem;
+
+  width: max-content;
+
   white-space: nowrap;
-  animation: marquee 30s linear infinite;
+
+  animation: marquee 25s linear infinite;
+
+  will-change: transform;
 }
 
+/* TEXTO */
+
 .marquee-track span {
-  padding-right: 4rem;
+  display: inline-block;
 }
+
+/* ALERT TEXT */
+
+.alert {
+  color: var(--primary-color);
+  font-weight: 700;
+
+  animation: blinkAlert 1.2s infinite;
+}
+
+/* PAUSE HOVER */
 
 .top-bar:hover .marquee-track {
   animation-play-state: paused;
@@ -518,5 +571,29 @@ body {
 
   .navbar {
     padding: 1rem;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes blinkAlert {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

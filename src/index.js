@@ -16,6 +16,29 @@ function init() {
   initHeroSlider()
   initSmoothScroll()
   initConsoleMessage()
+  initMarqueeFix()
+}
+
+/* =========================================================
+   FIX MARQUEE LOOP (TOP BAR)
+   Evita bug e cria loop infinito
+========================================================= */
+
+function initMarqueeFix() {
+  const track = document.querySelector('.marquee-track')
+
+  if (!track) return
+
+  // impede duplicação caso o script rode novamente
+  if (track.dataset.duplicated) return
+
+  const content = track.innerHTML
+
+  // duplica o conteúdo para loop contínuo
+  track.innerHTML += content
+
+  // marca como duplicado
+  track.dataset.duplicated = 'true'
 }
 
 /* =========================================================
@@ -24,29 +47,18 @@ function init() {
 ========================================================= */
 
 function initHeroSlider() {
-  /* ---------- Configurações ---------- */
-
-  const SLIDE_INTERVAL = 8000 // tempo entre slides (ms)
-
-  /* ---------- Estado ---------- */
+  const SLIDE_INTERVAL = 8000
 
   const slides = document.querySelectorAll('.slide')
   let currentSlide = 0
 
-  /* ---------- Funções internas ---------- */
-
   function nextSlide() {
-    // Remove a classe ativa do slide atual
     slides[currentSlide].classList.remove('active')
 
-    // Calcula o próximo slide (loop infinito)
     currentSlide = (currentSlide + 1) % slides.length
 
-    // Ativa o novo slide
     slides[currentSlide].classList.add('active')
   }
-
-  /* ---------- Inicialização ---------- */
 
   if (slides.length > 0) {
     setInterval(nextSlide, SLIDE_INTERVAL)
@@ -55,7 +67,7 @@ function initHeroSlider() {
 
 /* =========================================================
    SMOOTH SCROLL
-   Rolagem suave para links internos (#anchors)
+   Rolagem suave para links internos
 ========================================================= */
 
 function initSmoothScroll() {
@@ -79,12 +91,11 @@ function initSmoothScroll() {
 
 /* =========================================================
    CONSOLE MESSAGE
-   Mensagem estilizada no console do navegador
 ========================================================= */
 
 function initConsoleMessage() {
   console.log(
     '%c[SISTEMA iDROID]: Conexão estabelecida. Arquivos da Saga carregados.',
-    'color: #e11d48; font-weight: bold; font-size: 12px;'
+    'color:#e11d48;font-weight:bold;font-size:12px;'
   )
 }
