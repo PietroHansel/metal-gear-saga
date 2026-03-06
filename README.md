@@ -6,6 +6,9 @@ Projeto de desenvolvimento web focado na evolução para Full Stack, apresentand
 
 <i>**Projeto não afiliado a Konami!**</i>
 
+https://pietrohansel.github.io/metal-gear-saga/
+
+
 <br>
 
 <img width="1688" height="893" alt="hero" src="https://github.com/user-attachments/assets/19ccf6f5-9aed-4054-81af-dae39c4b2202" />
