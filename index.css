@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'MGS2';
-  src: url('./assets/fonts/MGS2.ttf') format('truetype');
+  src: url('src/assets/fonts/MGS2.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
